@@ -9,7 +9,7 @@ class Triangle
 
 
   def kind
-    valid?
+    valid
     if (side_A == side_B) && (side_B == side_C) && (side_C == side_A)
       :equilateral
     elsif (side_A == side_B) || (side_B == side_C) || (side_C == side_A)
@@ -19,7 +19,7 @@ class Triangle
     end
   end
 
-  def valid?
+  def valid
     triangle = [(side_A + side_B > side_C),
           (side_A + side_C > side_B),
           (side_B + side_C > side_A)]
