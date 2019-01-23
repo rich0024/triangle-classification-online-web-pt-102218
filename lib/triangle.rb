@@ -20,9 +20,9 @@ class Triangle
   end
 
   def valid?
-    real = [(a + b > c), (a + c > b), (b + c > a)]
-    [a, b, c].each { |s| real << false if s <= 0 }
-    raise TriangleError if real.include?(false)
+    triangle = [(a + b > c), (a + c > b), (b + c > a)]
+    [a, b, c].each { |side| triangle << false if side <= 0 }
+    raise TriangleError if triangle.include?(false)
   end
 
   class TriangleError < StandardError
