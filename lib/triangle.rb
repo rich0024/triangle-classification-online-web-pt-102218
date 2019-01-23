@@ -24,11 +24,11 @@ attr_accessor :side_A, :side_B, :side_C
     @sides << side_A
     @sides << side_B
     @sides << side_C
-  real = [(side_A + side_B > side_C),
+  triangle = [(side_A + side_B > side_C),
           (side_A + side_C > side_B),
           (side_B + side_C > side_A)]
           @sides.each { |side| real << false if side <= 0 }
-  raise TriangleError if real.include?(false)
+  raise TriangleError if triangle.include?(false)
   end
 
 
