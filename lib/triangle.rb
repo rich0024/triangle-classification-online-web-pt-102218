@@ -20,7 +20,9 @@ class Triangle
   end
 
   def valid?
-    triangle = []
+    triangle = [(a + b > c),
+                (a + c > b),
+                (b + c > a)]
     [a, b, c].each do |side| triangle << false if side <= 0
     end
     raise TriangleError if triangle.include?(false)
