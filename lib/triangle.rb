@@ -6,8 +6,8 @@ class Triangle
       @side_B = side_B
       @side_C = side_C
     end
-    
-    
+
+
   def kind
     valid?
     if (side_A == side_B) && (side_B == side_C) && (side_C == side_A)
@@ -24,9 +24,9 @@ class Triangle
           (side_A + side_C > side_B),
           (side_B + side_C > side_A)]
           [side_A, side_B, side_C].each { |side| triangle << false if side <= 0 }
-          raise TriangleError if real.include?(false)
+          raise TriangleError if triangle.include?(false)
       end
-      
+
   class TriangleError < StandardError
   end
   # write code here
